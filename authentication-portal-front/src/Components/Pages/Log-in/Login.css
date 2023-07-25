@@ -1,0 +1,120 @@
+.p-LogIn {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #FFFFFF;
+}
+
+.p-LogIn .sideStyle {
+  height: 60vh;
+  width: 40%;
+  border-right: 3px solid #3A3D5B;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.p-LogIn .sideStyle img {
+  width: 90%;
+  height: auto;
+  margin: auto;
+}
+
+.p-LogIn .auth-form-container {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+  margin: auto;
+  width: 60%;
+}
+
+.p-LogIn .auth-form-container h1 {
+  margin-bottom: 7%;
+}
+
+.p-LogIn .auth-form-container .login-form {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.p-LogIn .auth-form-container .login-form input {
+  margin-bottom: 10px;
+  width: 120%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  color: #2C3E50;
+  font-size: 13px;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.p-LogIn .auth-form-container .login-form input:focus {
+  outline: none;
+  -webkit-box-shadow: 9px 7px 11px 3px rgba(0, 0, 0, 0.562);
+          box-shadow: 9px 7px 11px 3px rgba(0, 0, 0, 0.562);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.p-LogIn .auth-form-container .login-form button {
+  background-color: #6C63FF;
+  padding: 10px;
+  border-radius: 10px;
+  width: 150px;
+  height: 38px;
+  border: none;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.p-LogIn .auth-form-container .login-form button:hover {
+  outline: none;
+  -webkit-box-shadow: 9px 7px 11px 3px rgba(0, 0, 0, 0.562);
+          box-shadow: 9px 7px 11px 3px rgba(0, 0, 0, 0.562);
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.p-LogIn .link-btn {
+  background-color: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: large;
+  font-weight: 300;
+}
+
+.p-LogIn .link-btn span {
+  color: #b6b6b6;
+  text-decoration: underline;
+  font-weight: 500;
+}
+/*# sourceMappingURL=Login.css.map */
