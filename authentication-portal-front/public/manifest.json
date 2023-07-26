@@ -1,6 +1,9 @@
 {
   "short_name": "React App",
   "name": "Create React App Sample",
+  "web_accessible_resources": [
+    "http://localhost:3000"
+  ],
   "icons": [
     {
       "src": "favicon.ico",

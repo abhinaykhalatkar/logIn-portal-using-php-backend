@@ -5,7 +5,7 @@ import Login from "../Components/Pages/Log-in/Login";
 const RouteMap = () => {
   return [
     {
-      path: "/",
+      path: "/LogIn",
       element: <Login />,
     },
 
