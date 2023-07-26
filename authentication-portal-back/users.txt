@@ -1,0 +1,1 @@
+[{"email":"test@test.com","password":"$2y$10$GhIRzNEzu5cyuG5WZ\/S\/reiHUcAcjNa2u2vlRxo2Ib7kWqqkGWqbW"}]

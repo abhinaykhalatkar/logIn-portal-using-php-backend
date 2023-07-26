@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import "../Log-in/Login.scss";
 import orSep from "../../../Assets/orSep.svg";
@@ -10,15 +11,40 @@ export const Signup = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [isFullPasswrodValid, setIsFullPasswordValid] = useState(false);
+  const [message, setMessage] = useState("");
+  const [isConfirmPass, setIsConfirmPass] = useState(true);
+  
 
   const handlePasswordValidation = (val) => {
     setIsFullPasswordValid(val);
   };
+  
+  const handleConfirmPass=(cPass)=>{
+    setIsConfirmPass(pass===cPass)
+  }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(email, pass);
+  const handleRegistration = (e) => {
+        e.preventDefault();
+        console.log(email, pass);
+        console.log({ email, password: pass }); 
+      
+
+        axios
+          .post("http://localhost/authentication-portal-back/register.php", {
+            email: email,
+            password: pass,
+          })
+          .then((response) => {
+            console.log(response.data);
+            setMessage(response.data.message);
+            setEmail("");
+            setPass("");
+          })
+          .catch((error) => {
+            setMessage("Error occurred during registration.");
+          });
   };
+
 
   return (
     <motion.div
@@ -49,7 +75,7 @@ export const Signup = () => {
       </div>
       <div className="auth-form-container">
         <h1>Sign-Up</h1>
-        <form className="login-form" onSubmit={handleSubmit}>
+        <form className="login-form" onSubmit={handleRegistration}>
           <input
             value={email}
             onChange={(e) => {
@@ -70,10 +96,22 @@ export const Signup = () => {
             name="password"
             autoComplete="current-password"
           />
-          <button disabled={!isFullPasswrodValid} type="submit">
-            Log In
+           <input
+           className={`${!isConfirmPass?"red-border":""}`}
+           onFocus={(e)=>{handleConfirmPass(e.target.value)}}
+            onChange={(e)=>{handleConfirmPass(e.target.value)}}
+            type="password"
+            placeholder="Confirm Entered Password!"
+            id="Cpassword"
+            name="password"
+            autoComplete="current-password"
+          />
+          {(!isConfirmPass) ? <p>{"repeated password not correct!"}</p>:null}
+          <button disabled={!(isFullPasswrodValid && isConfirmPass)} type="submit">
+            Sign-Up
           </button>
         </form>
+        {message && <p>{message}</p>}
 
         <img src={orSep} alt="Logo" />
         <Link to="/LogIn">

@@ -2,11 +2,11 @@ import Home from "../Components/Pages/Home/Home";
 import Signup from "../Components/Pages/Sign-up/Sign-up";
 import Login from "../Components/Pages/Log-in/Login";
 
-const RouteMap = () => {
+const RouteMap = (isUserLoggedIn, setIsUserLoggedIn, setUserName,userName) => {
   return [
     {
       path: "/LogIn",
-      element: <Login />,
+      element: <Login setIsUserLoggedIn={setIsUserLoggedIn} setUserName={setUserName} />,
     },
 
     {
@@ -14,10 +14,12 @@ const RouteMap = () => {
       element: <Signup />,
     },
     {
-      path: "/Home",
-      element: <Home />,
+      path: "/",
+      element: <Home isUserLoggedIn={isUserLoggedIn} setUserName={setUserName} userName={userName} setIsUserLoggedIn={setIsUserLoggedIn}/>,
     },
   ];
 };
 
 export default RouteMap;
+//  test@test.com
+//  Qwertz123@

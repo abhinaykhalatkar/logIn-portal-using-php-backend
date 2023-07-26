@@ -1,0 +1,40 @@
+.p-Home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #19191b;
+  
+    .welcome-message {
+      text-align: center;
+  
+      h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #ffffff;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        color: #e4e4e4;
+      }
+  
+      .logout-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #6C63FF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+  

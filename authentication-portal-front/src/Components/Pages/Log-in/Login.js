@@ -1,24 +1,43 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { Link ,useNavigate} from "react-router-dom";
 import "./Login.scss";
 import orSep from "../../../Assets/orSep.svg";
 import logInIcon from "../../../Assets/login.svg";
 import InputCheckModule from "../../Units/InputCheck.js/InputCheck";
 import { motion } from "framer-motion";
 
-export const Login = () => {
+export const Login = ({ setIsUserLoggedIn, setUserName })=> {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+
+  const handlePasswordValidation = () => {
+    return pass===""?false:true
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, pass);
+    axios
+      .post("http://localhost/authentication-portal-back/login.php", {
+        email: email,
+        password: pass,
+      })
+      .then((response) => {
+        console.log(response.data);
+        setMessage(response.data.message);
+        if (response.data.userFound) {
+          setIsUserLoggedIn(response.data.userFound);
+          setUserName(response.data.userName);
+          navigate("/");
+        }
+      })
+      .catch((error) => {
+        setMessage("Error occurred during login.");
+      });
   };
 
-  const handlePasswordValidation = (val) => {
-    return;
-  };
   return (
     <motion.div
       className="p-LogIn"
@@ -71,6 +90,7 @@ export const Login = () => {
           />
           <button type="submit" disabled={pass===""}>Log In</button>
         </form>
+        {message && <p>{message}</p>}
 
         <img src={orSep} alt="Logo" />
         <Link to="/Sign-up">
