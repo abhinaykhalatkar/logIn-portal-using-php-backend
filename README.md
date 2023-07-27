@@ -13,9 +13,9 @@ Before you proceed, make sure you have the following software installed on your 
 1. Clone the repository to your local machine using Git:
 git clone https://github.com/abhinaykhalatkar/logIn-portal-using-php-backend.git
 
-2. Move all files from the "logIn-portal-using-php-backend/authentication-portal-back" folder to the XAMPP "htdocs" directory:
+2. Move the "authentication-portal-back" folder to the XAMPP "htdocs" directory:
 On Windows:
-move logIn-portal-using-php-backend/authentication-portal-back/* C:\xampp\htdocs\
+move logIn-portal-using-php-backend/* C:\xampp\htdocs\
 On macOS/Linux:
 mv logIn-portal-using-php-backend/authentication-portal-back/* /opt/lampp/htdocs/
 
@@ -40,11 +40,17 @@ sudo /opt/lampp/lampp start
 This will launch the React development server, and the frontend will be accessible at http://localhost:3000.
 
 Using the Application
+
 -Open your web browser and go to http://localhost:3000.
+
 -You will be redirected to the login page. Use the following test credentials to log in:
+
   Email: test@test.com
+  
   Password: Qwertz123@
+  
 -Upon successful login, you will be redirected to the home page, where a welcome message with your username will be displayed.
+
 -To log out, click on the "Logout" button, and you will be redirected back to the login page.
 
 Customization
@@ -57,7 +63,3 @@ Set up a secure web server for the PHP backend (e.g., Apache or Nginx) and point
 Build the React frontend for production using npm run build and serve the built files using the web server.
 Contributing
 Contributions to this project are welcome. Feel free to open issues or submit pull requests if you find any bugs or have suggestions for improvement.
-
-
-
-
